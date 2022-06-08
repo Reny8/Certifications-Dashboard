@@ -1,4 +1,5 @@
 ﻿using CertificationsAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,34 +18,34 @@ namespace CertificationsAPI.Repositories
         }
 
         // Function to add a new certification
-        public Task<Certification> Create(Certification certification)
+        public async Task<Certification> Create(Certification certification)
         {
-            return Task.FromResult(certification);
+            _context.Certifications.Add(certification);
+            await _context.SaveChangesAsync();
+            return certification;
         }
         // Function to delete an existing certification
-        public Task<Certification> Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var DeleteCertificate = await _context.Certifications.FindAsync(id);
+            _context.Certifications.Remove(DeleteCertificate);
+            await _context.SaveChangesAsync();
         }
         // Function to get all the certifications in the database
-        public Task<IEnumerable<Certification>> GetAll()
+        public async Task<IEnumerable<Certification>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Certifications.ToListAsync();
         }
         // Function to get a certificate by id
-        public Task<Certification> Get(int id)
+        public async Task<Certification> Get(int id)
         {
-           throw new NotImplementedException();
+            return await _context.Certifications.FindAsync(id);
         }
         // Function to update an existing certificate
-        public Task Update(Certification certification)
+        public async Task Update(Certification certification)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Certification>> Get()
-        {
-            throw new NotImplementedException();
+            _context.Entry(certification).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
     }
 }
