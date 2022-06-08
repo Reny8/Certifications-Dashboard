@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CertificationsAPI
+namespace CertificationsAPI.Models
 {
     public class Certification
     {
