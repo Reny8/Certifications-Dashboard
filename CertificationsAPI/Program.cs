@@ -1,7 +1,10 @@
+using CertificationsAPI.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<CertificationContext>(o => o.UseSqlite("Data source = certifications_database"));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
