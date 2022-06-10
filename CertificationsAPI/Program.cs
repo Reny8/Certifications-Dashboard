@@ -20,7 +20,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader());
 });
 
-builder.Services.AddDbContext<CertificationContext>(opts =>
+builder.Services.AddDbContext<ApplicationDbContext>(opts =>
                    opts.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=certifications_database; Integrated Security=true",
                                      sqlServerOptions => sqlServerOptions.CommandTimeout(400)));
 
@@ -34,6 +34,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 

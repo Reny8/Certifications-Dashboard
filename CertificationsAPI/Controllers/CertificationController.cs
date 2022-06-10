@@ -1,6 +1,6 @@
-﻿using CertificationsAPI.Repositories;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using CertificationsAPI.Models;
 
 namespace CertificationsAPI.Controllers
 {
@@ -8,11 +8,17 @@ namespace CertificationsAPI.Controllers
     [ApiController]
     public class CertificationController : ControllerBase
     {
-        private readonly ICertificationRepository _context;
+        private readonly ApplicationDbContext _context;
 
-        public CertificationController(ICertificationRepository context)
+        public CertificationController(ApplicationDbContext context)
         {
             _context = context;
+        }
+        [HttpGet]
+        public IActionResult GetAllCertifications()
+        {
+            var certifications = _context.Certifications;
+            return Ok(certifications);
         }
     }
 }
