@@ -2,6 +2,7 @@
 using CertificationsAPI.Models;
 using CertificationsAPI.Data;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace CertificationsAPI.Controllers
 {
@@ -33,13 +34,20 @@ namespace CertificationsAPI.Controllers
         }
 
         [HttpPost]
-        // ADD A NWE CERTIFICATION
+        // ADD A NEW CERTIFICATION
         public IActionResult AddCertification([FromBody] Certification certification)
         {
             _context.Certifications.Add(certification);
             _context.SaveChanges();
-            return Ok();
+            return Ok(certification);
         }
-
+        [HttpPut]
+        // UPDATE A CERTIFICATE IN THE SYSTEM
+        public IActionResult UpdateCertification([FromBody] Certification certification)
+        {
+            _context.Entry(certification).State = EntityState.Modified;
+            _context.SaveChanges();
+            return Ok(certification);
+        }
     }
 }
