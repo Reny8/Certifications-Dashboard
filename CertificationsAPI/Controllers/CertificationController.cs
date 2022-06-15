@@ -41,13 +41,21 @@ namespace CertificationsAPI.Controllers
             _context.SaveChanges();
             return Ok(certification);
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         // UPDATE A CERTIFICATE IN THE SYSTEM
-        public IActionResult UpdateCertification([FromBody] Certification certification)
+        public IActionResult UpdateCertification(int id, [FromBody] Certification certification)
         {
-            _context.Entry(certification).State = EntityState.Modified;
-            _context.SaveChanges();
-            return Ok(certification);
+            if (id != certification.Id)
+            {
+                return BadRequest("Not Found");
+            }
+            else
+            {
+                _context.Entry(certification).State = EntityState.Modified;
+                _context.SaveChanges();
+                return Ok(certification);
+            }
+           
         }
     }
 }
