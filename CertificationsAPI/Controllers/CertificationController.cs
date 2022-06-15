@@ -31,11 +31,13 @@ namespace CertificationsAPI.Controllers
         }
 
         [HttpPost]
-        // Action Result = allows to return 400 Bad Request, Not found etc. 
+
         public IActionResult AddCertification([FromBody] Certification certification)
         {
-            return Ok("ok");
+            _context.Certifications.Add(certification);
+            _context.SaveChanges();
+            return Ok();
         }
+
     }
- 
 }
