@@ -17,6 +17,7 @@ namespace CertificationsAPI.Controllers
         }
 
         [HttpGet]
+        // GET ALL CERTIFICATIONS
         public IActionResult GetAllCertifications()
         {
             var Certifications = _context.Certifications;
@@ -24,6 +25,7 @@ namespace CertificationsAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        // GET CERTIFICATION BY ID
         public IActionResult CertificationById(int id)
         {
             var CertificationFound = _context.Certifications.Where(cert => cert.Id == id);
@@ -31,7 +33,7 @@ namespace CertificationsAPI.Controllers
         }
 
         [HttpPost]
-
+        // ADD A NWE CERTIFICATION
         public IActionResult AddCertification([FromBody] Certification certification)
         {
             _context.Certifications.Add(certification);
