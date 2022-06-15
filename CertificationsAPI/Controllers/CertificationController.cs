@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
 using CertificationsAPI.Models;
-using CertificationsAPI.Repositories;
+using CertificationsAPI.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace CertificationsAPI.Controllers
 {
@@ -9,25 +9,32 @@ namespace CertificationsAPI.Controllers
     [ApiController]
     public class CertificationController : ControllerBase
     {
-        private readonly ICertificationRepository _CertificationRepository;
+        private readonly ApplicationDbContext _context;
 
-        public CertificationController(ICertificationRepository CertificationRepository)
+        public CertificationController(ApplicationDbContext context)
         {
-            _CertificationRepository = CertificationRepository;
+            _context = context;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Certification>> GetAllCertifications()
+        public IActionResult GetAllCertifications()
         {
-            return await _CertificationRepository.GetAll();
+            var Certifications = _context.Certifications;
+            return Ok(Certifications);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult CertificationById(int id)
+        {
+            var CertificationFound = _context.Certifications.Where(cert => cert.Id == id);
+            return Ok(CertificationFound);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Certification>> AddCertification([FromBody] Certification certification)
+        // Action Result = allows to return 400 Bad Request, Not found etc. 
+        public IActionResult AddCertification([FromBody] Certification certification)
         {
-            var newCerification = await _CertificationRepository.Create(certification);
-            return CreatedAtAction(nameof(GetAllCertifications), new {id = newCerification.Id}, newCerification);
-
+            return Ok("ok");
         }
     }
  

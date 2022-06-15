@@ -1,11 +1,11 @@
-using CertificationsAPI.Models;
-using CertificationsAPI.Repositories;
+using CertificationsAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
+
+// Add services to the container.
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<ICertificationRepository, CertificationRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -22,7 +22,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddDbContext<ApplicationDbContext>(opts =>
                    opts.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=certifications_database; Integrated Security=true",
-                                     sqlServerOptions => sqlServerOptions.CommandTimeout(400)));
+                   sqlServerOptions => sqlServerOptions.CommandTimeout(400)
+                   ));
 
 var app = builder.Build();
 
@@ -34,6 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
@@ -41,3 +43,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
