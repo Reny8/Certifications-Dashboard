@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using CertificationsAPI.Models;
+using CertificationsAPI.Repositories;
 
 namespace CertificationsAPI.Controllers
 {
@@ -8,17 +9,26 @@ namespace CertificationsAPI.Controllers
     [ApiController]
     public class CertificationController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ICertificationRepository _CertificationRepository;
 
-        public CertificationController(ApplicationDbContext context)
+        public CertificationController(ICertificationRepository CertificationRepository)
         {
-            _context = context;
+            _CertificationRepository = CertificationRepository;
         }
+
         [HttpGet]
-        public IActionResult GetAllCertifications()
+        public async Task<IEnumerable<Certification>> GetAllCertifications()
         {
-            var certifications = _context.Certifications;
-            return Ok(certifications);
+            return await _CertificationRepository.GetAll();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Certification>> AddCertification([FromBody] Certification certification)
+        {
+            var newCerification = await _CertificationRepository.Create(certification);
+            return CreatedAtAction(nameof(GetAllCertifications), new {id = newCerification.Id}, newCerification);
+
         }
     }
+ 
 }

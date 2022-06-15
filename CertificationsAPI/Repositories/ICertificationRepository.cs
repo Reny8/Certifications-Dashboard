@@ -7,11 +7,10 @@ namespace CertificationsAPI.Repositories
 {
     public interface  ICertificationRepository
     {
-        Task<IEnumerable<Certification>> Get();
         Task<Certification> Get(int id);
         Task<Certification> Create(Certification certification);
         Task Update(Certification certification);
         Task <Certification> Delete(int id);
-
+        Task<IEnumerable<Certification>> GetAll();
     }
 }
