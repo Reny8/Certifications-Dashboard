@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XngPfYg9VH2e5GA1wejPLhWV/jyM2IXyF7WhX7M696mhiLdg3MoLu4qpD75NaqUBK3Uc0GZBdyk33XnSSqhAVw==",
+  "dgSpecHash": "79nAu5rHLq4vwc+ib8A4Uv9r8nWEMfgJzkove16E9nlyTMdKRKW1slG0obsKCQEol+9VjtnVjjkSaxLVSpFVBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\CertificationsAPI\\CertificationsAPI.csproj",
+  "projectFilePath": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\backend\\CertificationsAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\renyr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\renyr\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

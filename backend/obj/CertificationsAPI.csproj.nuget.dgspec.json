@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\CertificationsAPI\\CertificationsAPI.csproj": {}
+    "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\backend\\CertificationsAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\CertificationsAPI\\CertificationsAPI.csproj": {
+    "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\backend\\CertificationsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\CertificationsAPI\\CertificationsAPI.csproj",
+        "projectUniqueName": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\backend\\CertificationsAPI.csproj",
         "projectName": "CertificationsAPI",
-        "projectPath": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\CertificationsAPI\\CertificationsAPI.csproj",
+        "projectPath": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\backend\\CertificationsAPI.csproj",
         "packagesPath": "C:\\Users\\renyr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\CertificationsAPI\\obj\\",
+        "outputPath": "C:\\Users\\renyr\\Desktop\\Certifications-Dashboard-API\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
