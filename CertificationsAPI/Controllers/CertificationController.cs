@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CertificationsAPI.Models;
 using CertificationsAPI.Data;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace CertificationsAPI.Controllers
@@ -55,7 +54,15 @@ namespace CertificationsAPI.Controllers
                 _context.SaveChanges();
                 return Ok(certification);
             }
-           
+        }     
+        // DELETE A CERTIFICATE IN THE SYSTEM
+        [HttpDelete("{id}")]
+        public IActionResult DeleteCertification(int id)
+        {
+            var certification = _context.Certifications.Single(x => x.Id == id);
+            _context.Certifications.Remove(certification);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
