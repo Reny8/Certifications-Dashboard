@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "20fd1bd9-f9ae-4334-93e4-773d7e365fdd",
+		"name": "Certifications_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20282611"
+	},
+	"item": [
+		{
+			"name": "Get_All_Certificates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7050/api/certification/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7050",
+					"path": [
+						"api",
+						"certification",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_A_Certification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"obtained\": \"2022-01-01\",\r\n    \"expired\": \"N/A\",\r\n    \"organization\": \"Udemy\",\r\n    \"image\": \"project_management.jpg\",\r\n    \"title\": \"Microsoft Excel-Excel From Beginner to Advanced\",\r\n    \"description\": \"Learn how to use excel features\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7050/api/certification/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7050",
+					"path": [
+						"api",
+						"certification",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_By_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7050/api/certification/4/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7050",
+					"path": [
+						"api",
+						"certification",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Certification",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"obtained\": \"2017-10-01\",\r\n    \"expired\": \"N/A\",\r\n    \"organization\": \"Orleans Technical College\",\r\n    \"image\": \"No Photo Yet\",\r\n    \"title\": \"Residential & Commercial Electricity\",\r\n    \"description\": \"6 month hands-on electricial program\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7050/api/certification/4/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7050",
+					"path": [
+						"api",
+						"certification",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_A_Certification",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7050/api/certification/4/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7050",
+					"path": [
+						"api",
+						"certification",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
