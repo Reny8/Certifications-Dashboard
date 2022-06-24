@@ -1,6 +1,8 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import axios from "axios";
+import HomePage from "./Pages/HomePage";
 function App() {
   const [certificates, setCertificates] = useState([]);
   useEffect(() => {
@@ -16,7 +18,13 @@ function App() {
       console.log(error.message);
     }
   }
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage certificates={certificates} />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
