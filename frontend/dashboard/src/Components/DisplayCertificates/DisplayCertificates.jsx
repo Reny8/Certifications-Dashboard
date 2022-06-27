@@ -1,4 +1,5 @@
 import React from "react";
+import "./DisplayCertificates.css"
 const DisplayCertificates = (props) => {
   return (
     <div>
@@ -16,7 +17,7 @@ const DisplayCertificates = (props) => {
           {props.certificates.map((item) => {
             return (
               <tr key={item.id}>
-                <td>
+                <td className="around-image">
                   <img src={item.image} alt="certification" />
                 </td>
                 <td>{item.title}</td>
