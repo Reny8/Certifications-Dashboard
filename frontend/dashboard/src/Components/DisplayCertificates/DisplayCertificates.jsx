@@ -3,7 +3,7 @@ import "./DisplayCertificates.css"
 const DisplayCertificates = (props) => {
   return (
     <div>
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <th>Image</th>

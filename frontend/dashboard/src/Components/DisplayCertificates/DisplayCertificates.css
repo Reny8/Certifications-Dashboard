@@ -1,7 +1,6 @@
 .around-image {
-    display: flex;
-    justify-content: space-around;
+    width: 10%
 }
-img {
-    width: 25%;
+.around-image img {
+    width: 100%;
 }
