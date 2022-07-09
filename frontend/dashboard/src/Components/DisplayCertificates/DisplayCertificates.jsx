@@ -1,14 +1,8 @@
 import React from "react";
+import UpdateModal from "../Modals/UpdateModal";
 import "./DisplayCertificates.css";
 const DisplayCertificates = (props) => {
 
-  function Edit(msg, myYes) {
-    try {
-      prompt("What would you like to edit?\nEnter one of the following:\nImage\nTitle\nDescription\nObtained\nExpired")
-    } catch (error) {
-      
-    }
-  }
   return (
     <div className="around-certificates">
       <table className="table table-striped table-dark">
@@ -35,17 +29,7 @@ const DisplayCertificates = (props) => {
                 <td className="around-dates">{item.obtained}</td>
                 <td className="around-dates">{item.expired}</td>
                 <td>
-                  <button
-                    data-toggle="modal"
-                    onClick={() => {
-                      Edit();
-                    }}
-                  >
-                    <img
-                      src="https://img.icons8.com/ios-glyphs/60/000000/edit--v1.png"
-                      alt="Edit Button"
-                    />
-                  </button>
+                  <UpdateModal />
                 </td>
                 <td>
                   <button>
