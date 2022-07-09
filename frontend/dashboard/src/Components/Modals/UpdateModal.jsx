@@ -7,6 +7,10 @@ const UpdateModal = (props) => {
     setEditModal("active")
     setOverlayStatus("active")
   }
+  function closeModal() {
+    setEditModal("")
+    setOverlayStatus("")
+  }
   return (
     <div>
       <button  onClick={()=> showModal()}>
@@ -18,7 +22,7 @@ const UpdateModal = (props) => {
       <div className={editModal} id="modal-template">
         <div className="modal-header">
           <h1>Modal Example Title</h1>
-          <button className="close-modal">&times;</button>
+          <button onClick={()=> closeModal()}className="close-modal">&times;</button>
         </div>
         <div className="modal-body">Body Text....</div>
       </div>
