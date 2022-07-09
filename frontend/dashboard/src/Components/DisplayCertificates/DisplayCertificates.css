@@ -27,3 +27,6 @@ tbody button img:hover {
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 10px;
 }
+.around-obtained {
+    width:10%
+}
