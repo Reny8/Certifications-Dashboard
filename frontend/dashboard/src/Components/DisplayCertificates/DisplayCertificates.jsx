@@ -29,7 +29,7 @@ const DisplayCertificates = (props) => {
                 <td className="around-dates">{item.obtained}</td>
                 <td className="around-dates">{item.expired}</td>
                 <td>
-                  <UpdateModal />
+                  <UpdateModal item={item}/>
                 </td>
                 <td>
                   <button>
