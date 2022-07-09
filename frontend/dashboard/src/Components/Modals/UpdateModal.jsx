@@ -1,22 +1,28 @@
-import React from "react";
+import React,{useState} from "react";
 import "./UpdateModal.css"
 const UpdateModal = (props) => {
+  const [editModal, setEditModal] = useState("")
+  const [overlayStatus, setOverlayStatus] = useState("")
+  function showModal() {
+    setEditModal("active")
+    setOverlayStatus("active")
+  }
   return (
     <div>
-      <button data-modal-target="#edit-modal">
+      <button  onClick={()=> showModal()}>
         <img
           src="https://img.icons8.com/ios-glyphs/60/000000/edit--v1.png"
           alt="Edit Button"
         />
       </button>
-      <div className="modal-template" id="edit-modal">
+      <div className={editModal} id="modal-template">
         <div className="modal-header">
           <h1>Modal Example Title</h1>
-          <button data-close-button className="close-modal">&times;</button>
+          <button className="close-modal">&times;</button>
         </div>
         <div className="modal-body">Body Text....</div>
       </div>
-      <div id="overlay"></div>
+      <div className={overlayStatus} id="overlay"></div>
     </div>
   );
 };

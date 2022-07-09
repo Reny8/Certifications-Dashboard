@@ -1,4 +1,4 @@
-.modal-template {
+#modal-template{
     position: fixed;
     top:50%;
     left:50%;
@@ -12,7 +12,7 @@
     width: 500px;
     max-width: 80%
 }
-.modal-template.active {
+#modal-template.active {
     transform: translate(-50%,-50%) scale(1)
 }
 .modal-header {
@@ -37,7 +37,7 @@ font-weight:bold
 .modal-body {
     padding: 10px 15px
 }
-#overlay {
+#overlay{
 position:fixed;
 opacity: 0;
 top: 0;
