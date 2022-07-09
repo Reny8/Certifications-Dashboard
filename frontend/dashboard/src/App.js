@@ -1,13 +1,14 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
 import axios from "axios";
-import HomePage from "./Pages/HomePage";
+import DisplayCertificates from "./Components/DisplayCertificates/DisplayCertificates";
+
 function App() {
   const [certificates, setCertificates] = useState([]);
   useEffect(() => {
     getAllCertifications();
   }, []);
+
   async function getAllCertifications() {
     try {
       let response = await axios.get(
@@ -23,11 +24,8 @@ function App() {
       <div className="title">
         <h1>CERTIFICATION'S DASHBOARD</h1>
       </div>
-      <Routes>
-        <Route path="/" element={<HomePage certificates={certificates} />} />
-      </Routes>
+      <DisplayCertificates certificates={certificates} />
     </div>
   );
 }
-
 export default App;
