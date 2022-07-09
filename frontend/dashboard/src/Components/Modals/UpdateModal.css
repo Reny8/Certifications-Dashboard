@@ -10,7 +10,8 @@
     z-index: 10;
     background-color: rgb(104, 104, 104);
     width:850px;
-    max-width: 80%
+    max-width: 80%;
+    padding-bottom: 1rem
 }
 #modal-template.active {
     transform: translate(-50%,-50%) scale(1)
@@ -55,4 +56,9 @@ opacity:1
 input {
     background-color: transparent;
     width:50rem
+}
+textarea {
+    background-color: transparent;
+    width: 50rem;
+    height:5rem
 }

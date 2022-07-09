@@ -3,6 +3,7 @@ import "./UpdateModal.css";
 const UpdateModal = (props) => {
   const [editModal, setEditModal] = useState("");
   const [overlayStatus, setOverlayStatus] = useState("");
+  const [item, setitem] = useState(props.item)
   function showModal() {
     setEditModal("active");
     setOverlayStatus("active");
@@ -29,26 +30,26 @@ const UpdateModal = (props) => {
         <div className="modal-body">
           <div>You have selected: {props.item.title}</div>
           <div>Edit Below:</div>
-       <label>
-        Image:
-        <input value={props.item.image}/>
-       </label>
-       <label>
-        Title:
-        <input value={props.item.title}/>
-       </label>
-       <label>
-        Description:
-        <input value={props.item.description}/>
-       </label>
-       <label>
-        Date Obtained:
-        <input value={props.item.obtained}/>
-       </label>
-       <label>
-        Expiration Date:
-        <input value={props.item.expired}/>
-       </label>
+          <label>
+            Image:
+            <input value={item.image} />
+          </label>
+          <label>
+            Title:
+            <input value={item.title} />
+          </label>
+          <label>
+            Description:
+            <textarea value={item.description} />
+          </label>
+          <label>
+            Date Obtained:
+            <input value={item.obtained} />
+          </label>
+          <label>
+            Expiration Date:
+            <input value={item.expired} />
+          </label>
         </div>
       </div>
       <div className={overlayStatus} id="overlay"></div>
