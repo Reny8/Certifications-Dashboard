@@ -20,6 +20,9 @@ function App() {
   }
   return (
     <div className="app">
+      <div>
+        <h1>CERTIFICATION'S DASHBOARD</h1>
+      </div>
       <Routes>
         <Route path="/" element={<HomePage certificates={certificates} />} />
       </Routes>
