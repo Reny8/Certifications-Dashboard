@@ -1,4 +1,12 @@
 .title {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+.app {
+  font-family: Apple Chancery, cursive;
+  color: white;
+  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700411047.jpg");
+}
+html {
+  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700411047.jpg");
 }
