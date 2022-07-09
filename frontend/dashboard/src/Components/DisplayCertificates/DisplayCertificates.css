@@ -1,6 +1,17 @@
 .around-image {
-    width: 10%
+    width: 10%;
 }
 .around-image img {
     width: 100%;
+    border-style: solid;
+}
+.around-certificates button {
+    background:transparent;
+    border-style: none;
+}
+.table {
+    vertical-align:middle
+}
+.edit-button img{
+    width:150%;
 }
