@@ -20,7 +20,7 @@ function App() {
   }
   return (
     <div className="app">
-      <div>
+      <div className="title">
         <h1>CERTIFICATION'S DASHBOARD</h1>
       </div>
       <Routes>
