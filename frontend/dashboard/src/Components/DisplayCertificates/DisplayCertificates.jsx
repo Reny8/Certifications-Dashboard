@@ -2,8 +2,8 @@ import React from "react";
 import "./DisplayCertificates.css"
 const DisplayCertificates = (props) => {
   return (
-    <div>
-      <table className="table">
+    <div className="around-certificates">
+      <table className="table table-striped table-dark">
         <thead>
           <tr>
             <th>Image</th>
@@ -11,6 +11,8 @@ const DisplayCertificates = (props) => {
             <th>Description</th>
             <th>Obtained</th>
             <th>Expired</th>
+            <th>Update</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +26,8 @@ const DisplayCertificates = (props) => {
                 <td>{item.description}</td>
                 <td>{item.obtained}</td>
                 <td>{item.expired}</td>
+                <td><button>UPDATE</button></td>
+                <td><button><img src="https://img.icons8.com/glyph-neue/64/000000/delete-forever.png" alt="Delete Button"/></button></td>
               </tr>
             );
           })}
