@@ -24,7 +24,7 @@ function App() {
       <div className="title">
         <h1>CERTIFICATION'S DASHBOARD</h1>
       </div>
-      <DisplayCertificates certificates={certificates} />
+      <DisplayCertificates getAllCertifications={getAllCertifications} certificates={certificates} />
     </div>
   );
 }

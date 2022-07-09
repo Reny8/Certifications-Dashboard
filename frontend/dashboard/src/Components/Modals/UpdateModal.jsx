@@ -1,13 +1,42 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./UpdateModal.css";
 const UpdateModal = (props) => {
   const [editModal, setEditModal] = useState("");
   const [overlayStatus, setOverlayStatus] = useState("");
-  const [item, setitem] = useState(props.item)
+  const [image, setImage] = useState(props.item.image);
+  const [organization, setOrganization] = useState(props.item.organization);
+  const [title, setTitle] = useState(props.item.title);
+  const [description, setDescription] = useState(props.item.description);
+  const [obtained, setObtained] = useState(props.item.obtained);
+  const [expired, setExpired] = useState(props.item.expired);
+
+  async function editAdded(body, id) {
+    try {
+      axios.put(`https://localhost:7050/api/certification/${id}/`, body);
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+  function saveChanges() {
+    let updated = {
+      id: props.item.id,
+      obtained: obtained,
+      expired: expired,
+      organization: organization,
+      image: image,
+      title: title,
+      description: description,
+    };
+    editAdded(updated, props.item.id);
+    closeModal();
+  }
+
   function showModal() {
     setEditModal("active");
     setOverlayStatus("active");
   }
+
   function closeModal() {
     setEditModal("");
     setOverlayStatus("");
@@ -32,25 +61,55 @@ const UpdateModal = (props) => {
           <div>Edit Below:</div>
           <label>
             Image:
-            <input value={item.image} />
+            <input
+              type="text"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            />
+          </label>
+          <label>
+            Organization:
+            <input
+              type="text"
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
+            />
           </label>
           <label>
             Title:
-            <input value={item.title} />
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </label>
           <label>
             Description:
-            <textarea value={item.description} />
+            <textarea
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
           </label>
           <label>
             Date Obtained:
-            <input value={item.obtained} />
+            <input
+              type="text"
+              value={obtained}
+              onChange={(e) => setObtained(e.target.value)}
+            />
           </label>
           <label>
             Expiration Date:
-            <input value={item.expired} />
+            <input
+              type="text"
+              value={expired}
+              onChange={(e) => setExpired(e.target.value)}
+            />
           </label>
-          <button className="modal-save">Save Changes</button>
+          <button onClick={() => saveChanges()} className="modal-save">
+            Save Changes
+          </button>
         </div>
       </div>
       <div className={overlayStatus} id="overlay"></div>

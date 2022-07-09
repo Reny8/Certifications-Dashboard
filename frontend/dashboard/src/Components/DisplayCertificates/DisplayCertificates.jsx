@@ -9,6 +9,7 @@ const DisplayCertificates = (props) => {
         <thead>
           <tr>
             <th>Image</th>
+            <th>Organization</th>
             <th>Title</th>
             <th>Description</th>
             <th>Obtained</th>
@@ -24,12 +25,13 @@ const DisplayCertificates = (props) => {
                 <td className="around-image">
                   <img src={item.image} alt="certification" />
                 </td>
+                <td>{item.organization}</td>
                 <td>{item.title}</td>
                 <td>{item.description}</td>
                 <td className="around-dates">{item.obtained}</td>
                 <td className="around-dates">{item.expired}</td>
                 <td>
-                  <UpdateModal item={item}/>
+                  <UpdateModal getAllCertifications={props.getAllCertifications} item={item}/>
                 </td>
                 <td>
                   <button>
