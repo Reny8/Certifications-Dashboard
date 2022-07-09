@@ -26,7 +26,7 @@ const DisplayCertificates = (props) => {
                 <td>{item.description}</td>
                 <td>{item.obtained}</td>
                 <td>{item.expired}</td>
-                <td><button className="edit-button"><img src="https://img.icons8.com/ios-glyphs/60/000000/edit--v1.png" alt="Edit Button"/></button></td>
+                <td><button><img src="https://img.icons8.com/ios-glyphs/60/000000/edit--v1.png" alt="Edit Button"/></button></td>
                 <td><button><img src="https://img.icons8.com/glyph-neue/64/000000/delete-forever.png" alt="Delete Button"/></button></td>
               </tr>
             );
