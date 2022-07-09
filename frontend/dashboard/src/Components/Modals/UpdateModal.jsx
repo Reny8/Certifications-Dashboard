@@ -50,6 +50,7 @@ const UpdateModal = (props) => {
             Expiration Date:
             <input value={item.expired} />
           </label>
+          <button className="modal-save">Save Changes</button>
         </div>
       </div>
       <div className={overlayStatus} id="overlay"></div>
