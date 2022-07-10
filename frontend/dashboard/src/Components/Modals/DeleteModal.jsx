@@ -30,7 +30,7 @@ const DeleteModal = (props) => {
     <div>
       <button onClick={() => showDeleteModal()}>
         <img
-          src="https://img.icons8.com/glyph-neue/64/000000/delete-forever.png"
+          src="https://img.icons8.com/glyph-neue/60/000000/delete-forever.png"
           alt="Delete Button"
         />
       </button>

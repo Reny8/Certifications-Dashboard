@@ -46,6 +46,7 @@ const DisplayCertificates = (props) => {
           })}
         </tbody>
       </table>
+      <div className="around-add-button"><button className="add-button">ADD A NEW CERTIFCATION</button></div>
     </div>
   );
 };
