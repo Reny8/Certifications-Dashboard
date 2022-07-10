@@ -3,17 +3,19 @@ import axios from "axios";
 import "./DeleteModal.css";
 const DeleteModal = (props) => {
   const [choice, setChoice] = useState("");
+  const [remove, setRemove] = useState("");
+  const [deleteOverlay, setDeleteOverlay] = useState("");
+
   async function deleteCertificate(id) {
     try {
       if (choice.toLowerCase() === "yes") {
-        console.log(id);
+        axios.delete(`https://localhost:7050/api/certification/${id}/`);
       }
     } catch (error) {
       console.log(error.message);
     }
   }
-  const [remove, setRemove] = useState("");
-  const [deleteOverlay, setDeleteOverlay] = useState("");
+
   function closeDeleteModal() {
     setRemove("");
     setDeleteOverlay("");
