@@ -56,14 +56,12 @@ opacity:1
 input {
     background-color: transparent;
     width:50rem;
-    margin-left:0.5rem;
     border-radius: 3px;
     color: white
 }
 textarea {
     background-color: transparent;
     width: 50rem;
-    margin-left: 0.5rem;
     height:5rem;
     color: white;
     border-radius: 3px
