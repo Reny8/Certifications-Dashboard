@@ -17,7 +17,7 @@
     --bs-table-striped-bg:rgba(91, 90, 90, 0.705);
 }
 
-tbody button {
+tbody button img {
     filter: opacity(0.9) drop-shadow(0 0 0 white) brightness(100) contrast(100%);
     border: 0 solid;
     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
@@ -27,7 +27,7 @@ tbody button {
     transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
     
 }
-tbody button:hover {
+tbody button img:hover {
     box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 10px;
