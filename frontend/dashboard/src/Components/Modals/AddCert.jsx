@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./UpdateModal.css";
-import "./AddCert.css"
+import "./AddCert.css";
 const AddCert = (props) => {
   const [addModal, setAddModal] = useState("");
   const [addOverlayStatus, setAddOverlayStatus] = useState("");
@@ -10,8 +11,8 @@ const AddCert = (props) => {
     organization: "",
     image: "",
     title: "",
-    description: ""
-  })
+    description: "",
+  });
   function showAddCertModal() {
     setAddModal("active");
     setAddOverlayStatus("active");
@@ -21,8 +22,22 @@ const AddCert = (props) => {
     setAddModal("");
     setAddOverlayStatus("");
   }
-  function addNewCert(certification) {
-    console.log(certification)
+  async function addNewCert(certification) {
+    try {
+      await axios.post("https://localhost:7050/api/certification/", certification);
+      props.getAllCertifications()
+    } catch (error) {
+      console.log(error.message);
+    }
+    closeAddCertModal();
+    setNewCert({
+      obtained: "",
+      expired: "",
+      organization: "",
+      image: "",
+      title: "",
+      description: "",
+    });
   }
   return (
     <div>
@@ -33,19 +48,21 @@ const AddCert = (props) => {
       </div>
       <div className={addModal} id="add-cert-modal">
         <div className="modal-header">
-            <h1>ADD A CERTIFICATION</h1>
-            <button onClick={() => closeAddCertModal()} className="close-modal">
+          <h1>ADD A CERTIFICATION</h1>
+          <button onClick={() => closeAddCertModal()} className="close-modal">
             &times;
           </button>
         </div>
         <div className="modal-body">
-            <div>Enter Values Below:</div>
-            <label>
+          <div>Enter Values Below:</div>
+          <label>
             Image:
             <input
               type="text"
               value={newCert.image}
-              onChange={(e) => setNewCert({...newCert, image: e.target.value})}
+              onChange={(e) =>
+                setNewCert({ ...newCert, image: e.target.value })
+              }
             />
           </label>
           <label>
@@ -53,7 +70,9 @@ const AddCert = (props) => {
             <input
               type="text"
               value={newCert.organization}
-              onChange={(e) => setNewCert({...newCert, organization: e.target.value})}
+              onChange={(e) =>
+                setNewCert({ ...newCert, organization: e.target.value })
+              }
             />
           </label>
           <label>
@@ -61,7 +80,9 @@ const AddCert = (props) => {
             <input
               type="text"
               value={newCert.title}
-              onChange={(e) => setNewCert({...newCert, title: e.target.value})}
+              onChange={(e) =>
+                setNewCert({ ...newCert, title: e.target.value })
+              }
             />
           </label>
           <label>
@@ -69,7 +90,9 @@ const AddCert = (props) => {
             <textarea
               type="text"
               value={newCert.description}
-              onChange={(e) => setNewCert({...newCert, description: e.target.value})}
+              onChange={(e) =>
+                setNewCert({ ...newCert, description: e.target.value })
+              }
             />
           </label>
           <label>
@@ -77,7 +100,9 @@ const AddCert = (props) => {
             <input
               type="date"
               value={newCert.obtained}
-              onChange={(e) => setNewCert({...newCert, obtained: e.target.value})}
+              onChange={(e) =>
+                setNewCert({ ...newCert, obtained: e.target.value })
+              }
             />
           </label>
           <label>
@@ -86,7 +111,9 @@ const AddCert = (props) => {
               type="text"
               placeholder="Enter a date or N/A"
               value={newCert.expired}
-              onChange={(e) => setNewCert({...newCert, expired: e.target.value})}
+              onChange={(e) =>
+                setNewCert({ ...newCert, expired: e.target.value })
+              }
             />
           </label>
           <button onClick={() => addNewCert(newCert)} className="modal-save">

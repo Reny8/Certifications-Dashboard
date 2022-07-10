@@ -34,11 +34,13 @@ const DisplayCertificates = (props) => {
                 <td className="around-dates">{item.expired}</td>
                 <td>
                   <UpdateModal
+                  getAllCertifications={props.getAllCertifications}
                     item={item}
                   />
                 </td>
                 <td>
                   <DeleteModal
+                  getAllCertifications={props.getAllCertifications}
                     item={item}
                   />
                 </td>
@@ -47,7 +49,7 @@ const DisplayCertificates = (props) => {
           })}
         </tbody>
       </table>
-      <AddCert />
+      <AddCert getAllCertifications={props.getAllCertifications}/>
     </div>
   );
 };

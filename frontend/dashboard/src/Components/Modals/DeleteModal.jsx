@@ -10,7 +10,8 @@ const DeleteModal = (props) => {
   async function deleteCertificate(id) {
     try {
       if (choice.toLowerCase() === "yes") {
-        axios.delete(`https://localhost:7050/api/certification/${id}/`);
+        await axios.delete(`https://localhost:7050/api/certification/${id}/`);
+        props.getAllCertifications()
       }
     } catch (error) {
       console.log(error.message);
