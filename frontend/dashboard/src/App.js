@@ -7,7 +7,7 @@ function App() {
   const [certificates, setCertificates] = useState([]);
   useEffect(() => {
     getAllCertifications();
-  },[]);
+  }, []);
 
   async function getAllCertifications() {
     try {
@@ -24,7 +24,10 @@ function App() {
       <div className="title">
         <h1>CERTIFICATION'S DASHBOARD</h1>
       </div>
-      <DisplayCertificates getAllCertifications={getAllCertifications} certificates={certificates} />
+      <DisplayCertificates
+        getAllCertifications={getAllCertifications}
+        certificates={certificates}
+      />
     </div>
   );
 }

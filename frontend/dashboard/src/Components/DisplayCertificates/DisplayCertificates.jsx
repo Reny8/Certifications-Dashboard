@@ -4,7 +4,6 @@ import DeleteModal from "../Modals/DeleteModal";
 import UpdateModal from "../Modals/UpdateModal";
 import "./DisplayCertificates.css";
 const DisplayCertificates = (props) => {
-
   return (
     <div className="around-certificates">
       <table className="table table-striped table-dark">
@@ -34,13 +33,13 @@ const DisplayCertificates = (props) => {
                 <td className="around-dates">{item.expired}</td>
                 <td>
                   <UpdateModal
-                  getAllCertifications={props.getAllCertifications}
+                    getAllCertifications={props.getAllCertifications}
                     item={item}
                   />
                 </td>
                 <td>
                   <DeleteModal
-                  getAllCertifications={props.getAllCertifications}
+                    getAllCertifications={props.getAllCertifications}
                     item={item}
                   />
                 </td>
@@ -49,7 +48,7 @@ const DisplayCertificates = (props) => {
           })}
         </tbody>
       </table>
-      <AddCert getAllCertifications={props.getAllCertifications}/>
+      <AddCert getAllCertifications={props.getAllCertifications} />
     </div>
   );
 };

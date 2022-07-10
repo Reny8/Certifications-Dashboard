@@ -43,7 +43,7 @@ const AddCert = (props) => {
     <div>
       <div className="around-add-button">
         <button onClick={() => showAddCertModal()} className="add-button">
-          ADD A CERTIFCATION
+          CLICK HERE TO ADD MORE
         </button>
       </div>
       <div className={addModal} id="add-cert-modal">
