@@ -2,20 +2,30 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./UpdateModal.css";
 const UpdateModal = (props) => {
-  const [editModal, setEditModal] = useState("");
-  const [overlayStatus, setOverlayStatus] = useState("");
   const [image, setImage] = useState(props.item.image);
   const [organization, setOrganization] = useState(props.item.organization);
   const [title, setTitle] = useState(props.item.title);
   const [description, setDescription] = useState(props.item.description);
   const [obtained, setObtained] = useState(props.item.obtained);
   const [expired, setExpired] = useState(props.item.expired);
+  const [editModal, setEditModal] = useState("");
+  const [overlayStatus, setOverlayStatus] = useState("");
+
+  function showModal() {
+    setEditModal("active");
+    setOverlayStatus("active");
+  }
+
+  function closeModal() {
+    setEditModal("");
+    setOverlayStatus("");
+  }
 
   async function editAdded(body, id) {
     try {
       axios.put(`https://localhost:7050/api/certification/${id}/`, body);
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
   }
   function saveChanges() {
@@ -30,16 +40,6 @@ const UpdateModal = (props) => {
     };
     editAdded(updated, props.item.id);
     closeModal();
-  }
-
-  function showModal() {
-    setEditModal("active");
-    setOverlayStatus("active");
-  }
-
-  function closeModal() {
-    setEditModal("");
-    setOverlayStatus("");
   }
   return (
     <div>

@@ -1,4 +1,5 @@
 import React from "react";
+import DeleteModal from "../Modals/DeleteModal";
 import UpdateModal from "../Modals/UpdateModal";
 import "./DisplayCertificates.css";
 const DisplayCertificates = (props) => {
@@ -31,15 +32,14 @@ const DisplayCertificates = (props) => {
                 <td className="around-dates">{item.obtained}</td>
                 <td className="around-dates">{item.expired}</td>
                 <td>
-                  <UpdateModal getAllCertifications={props.getAllCertifications} item={item}/>
+                  <UpdateModal
+                    item={item}
+                  />
                 </td>
                 <td>
-                  <button>
-                    <img
-                      src="https://img.icons8.com/glyph-neue/64/000000/delete-forever.png"
-                      alt="Delete Button"
-                    />
-                  </button>
+                  <DeleteModal
+                    item={item}
+                  />
                 </td>
               </tr>
             );

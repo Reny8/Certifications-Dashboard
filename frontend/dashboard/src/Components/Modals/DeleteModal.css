@@ -1,4 +1,4 @@
-#modal-template{
+#delete-modal{
     position: fixed;
     top:50%;
     left:50%;
@@ -13,7 +13,7 @@
     max-width: 80%;
     padding-bottom: 1rem
 }
-#modal-template.active {
+#delete-modal.active {
     transform: translate(-50%,-50%) scale(1)
 }
 .modal-header {
@@ -38,7 +38,7 @@ font-weight:bold
 .modal-body {
     padding: 10px 15px
 }
-#overlay {
+#delete-overlay {
 position:fixed;
 opacity: 0;
 top: 0;
@@ -49,7 +49,7 @@ transition: 200ms ease-in-out;
 background-color: rgba(255, 247, 247, 0.312);
 pointer-events: none
 }
-#overlay.active {
+#delete-overlay.active {
 pointer-events: all;
 opacity:1
 }
