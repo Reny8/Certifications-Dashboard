@@ -38,7 +38,7 @@ namespace CertificationsAPI.Controllers
         {
             _context.Certifications.Add(certification);
             _context.SaveChanges();
-            return Ok(certification);
+            return Ok(_context.Certifications);
         }
         [HttpPut("{id}")]
         // UPDATE A CERTIFICATE IN THE SYSTEM
@@ -52,7 +52,7 @@ namespace CertificationsAPI.Controllers
             {
                 _context.Entry(certification).State = EntityState.Modified;
                 _context.SaveChanges();
-                return Ok(certification);
+                return Ok(_context.Certifications);
             }
         }     
         // DELETE A CERTIFICATE IN THE SYSTEM
