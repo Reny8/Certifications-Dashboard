@@ -7,7 +7,7 @@ function App() {
   const [certificates, setCertificates] = useState([]);
   useEffect(() => {
     getAllCertifications();
-  });
+  },[]);
 
   async function getAllCertifications() {
     try {

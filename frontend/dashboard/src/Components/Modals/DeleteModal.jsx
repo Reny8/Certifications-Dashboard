@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./DeleteModal.css";
+import "./UpdateModal.css"
 const DeleteModal = (props) => {
   const [choice, setChoice] = useState("");
   const [remove, setRemove] = useState("");
@@ -44,6 +45,7 @@ const DeleteModal = (props) => {
           <div>You have Selected: {props.item.title}</div>
           <div>Are you sure you would like to delete?</div>
           <input
+          className="delete-input"
             type="text"
             value={choice}
             onChange={(e) => setChoice(e.target.value)}

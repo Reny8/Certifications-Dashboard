@@ -16,17 +16,7 @@
 #delete-modal.active {
     transform: translate(-50%,-50%) scale(1)
 }
-.modal-header {
-    padding: 10px 15px;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    border-bottom: 1px solid black
-}
-.modal-header h1 {
-    font-size: 1.25rem;
-    font-weight: bold
-}
+
 .close-modal {
 cursor: pointer;
 border: none;
@@ -35,8 +25,12 @@ background: none;
 font-size: 1.25rem;
 font-weight:bold
 }
-.modal-body {
-    padding: 10px 15px
+.delete-input {
+    background-color: transparent;
+    width:50rem;
+    border-radius: 3px;
+    color: white;
+    margin-left: 0.5rem;
 }
 #delete-overlay {
 position:fixed;
@@ -52,34 +46,4 @@ pointer-events: none
 #delete-overlay.active {
 pointer-events: all;
 opacity:1
-}
-input {
-    background-color: transparent;
-    width:50rem;
-    border-radius: 3px;
-    color: white
-}
-textarea {
-    background-color: transparent;
-    width: 50rem;
-    height:5rem;
-    color: white;
-    border-radius: 3px
-}
-label {
-    margin-top: 1rem;
-    margin-left: 0.5rem
-}
-.modal-body .modal-save  {
-    margin-top: 1rem;
-    background-color: black;
-    width: 50rem;
-    color: white;
-    border-radius: 3px;
-    box-shadow: 2px 2px 6px;
-    margin-left: 0.5rem
-}
-.modal-body .modal-save:hover {
-    background-color: white;
-    color: black
 }
