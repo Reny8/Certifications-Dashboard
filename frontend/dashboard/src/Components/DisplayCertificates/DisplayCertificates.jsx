@@ -1,4 +1,5 @@
 import React from "react";
+import AddCert from "../Modals/AddCert";
 import DeleteModal from "../Modals/DeleteModal";
 import UpdateModal from "../Modals/UpdateModal";
 import "./DisplayCertificates.css";
@@ -46,7 +47,7 @@ const DisplayCertificates = (props) => {
           })}
         </tbody>
       </table>
-      <div className="around-add-button"><button className="add-button">ADD A NEW CERTIFCATION</button></div>
+      <AddCert />
     </div>
   );
 };
