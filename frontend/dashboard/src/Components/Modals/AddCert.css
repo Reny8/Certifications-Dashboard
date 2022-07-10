@@ -1,0 +1,35 @@
+#add-cert-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px;
+  z-index: 10;
+  background-color: rgb(89, 87, 87);
+  width: 850px;
+  max-width: 80%;
+  padding-bottom: 1rem;
+  color: white
+}
+#add-cert-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+#add-overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 200ms ease-in-out;
+  background-color: rgba(255, 247, 247, 0.312);
+  pointer-events: none;
+}
+
+#add-overlay.active {
+  pointer-events: all;
+  opacity: 1;
+}
